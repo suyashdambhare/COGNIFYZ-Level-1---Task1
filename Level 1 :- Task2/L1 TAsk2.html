@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+     background-color: antiquewhite;
+    }
+    button {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+     margin-top: 5%;
+     margin-left: 45%;
+    }
+    .add{
+        align-items: center;
+    }
+  </style>
+</head>
+<script>
+    function generateGreeting() {
+            var currentTime = new Date();
+            var currentHour = currentTime.getHours();
+
+            var greeting;
+
+            if (currentHour < 12) {
+                greeting = "Good morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good afternoon!";
+            } else {
+                greeting = "Good evening!";
+            }
+
+            alert(greeting);
+        }
+        //code to ADD two numbers
+        function add() {
+        // Get the input values by selecting the elements with the ids "num1Input" and "num2Input"
+        const num1 = parseFloat(document.getElementById("num1Input").value);
+        const num2 = parseFloat(document.getElementById("num2Input").value);
+
+        // Check if the inputs are valid numbers
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Please enter valid numbers.");
+        } else {
+            const result = num1 + num2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+
+</script>
+<body onload="generateGreeting()">
+  <button id="myButton">Click Me</button> <hr>
+
+  <div class="add">
+<label for="num1Input">Enter the first number: </label>
+<input type="text" id="num1Input"> <br> <hr>
+
+<label for="num2Input">Enter the second number: </label>
+<input type="text" id="num2Input">  <br> <hr>
+
+<button onclick="add()">ADD</button>
+
+<div id="result"></div>
+</div>
+
+
+ 
+</body>
+<script>
+    var button = document.getElementById("myButton");
+    var body = document.querySelector("body");
+
+    body.addEventListener("click", function() {
+      button.style.backgroundColor = "black";
+      button.style.color = "white";
+    });
+  </script>
+</html>
